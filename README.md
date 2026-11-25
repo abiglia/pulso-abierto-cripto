@@ -1,23 +1,33 @@
-# Pulso Abierto - Mercado Cripto (Actividad 3)
+# Pulso Abierto - Mercado Cripto
 
-Aplicación web desarrollada con **React, TypeScript y Vite** para consultar cotizaciones de criptomonedas en tiempo real, visualizar el detalle de cada activo y gestionar una lista persistente de favoritos.
+Aplicación web desarrollada con **React, TypeScript y Vite** para consultar en tiempo real las cotizaciones de Bitcoin, Ethereum y Solana, filtrar activos mediante un formulario controlado, consultar vistas de detalle por ruta y gestionar una lista persistente de favoritos.
 
-**Alumno:** Aaron Biglia  
-**Materia:** Programación Web - Módulo 3  
-
----
-
-## Funcionalidades principales
-
-- **Consulta de cotizaciones en tiempo real:** Consumo centralizado de la API pública de CoinGecko (`/api/v3/simple/price`) mediante `cryptoService.ts`, con transformación de datos tipada, manejo de errores HTTP y deduplicación de consultas concurrentes.
-- **Filtrado y navegación:** Búsqueda por nombre/símbolo, filtro por categoría y vista de detalle individual (`/criptomonedas/:id`) con React Router.
-- **Estado global y persistencia:** Gestión de favoritos mediante **Zustand** (`useFavoritesStore`) con persistencia selectiva en `localStorage`, sincronizando tarjetas, vista de detalle y contador global en el encabezado.
-- **Pruebas automatizadas:** Suite de tests unitarios y de integración con **Vitest** y **Testing Library**.
+* **Alumno:** Aaron Biglia  
+* **Repositorio de GitHub:** https://github.com/abiglia/pulso-abierto-cripto  
+* **Aplicación publicada en Vercel:** https://pulso-abierto-cripto.vercel.app  
 
 ---
 
-## Instalación y ejecución
+## Tecnologías principales
 
-1. Instalar las dependencias del proyecto:
+* **React 19** y **TypeScript**
+* **Vite** (entorno de desarrollo y empaquetado productivo)
+* **React Router DOM** (navegación SPA entre listado y vistas de detalle)
+* **Zustand** con middleware `persist` (estado global de favoritos sincronizado con `localStorage`)
+* **Zod** (validación de entradas del formulario)
+* **Vitest**, **Testing Library** y **jsdom** (pruebas automatizadas unitarias y de interfaz)
+* **ESLint** (análisis estático de código)
+
+---
+
+## Variables de entorno
+
+El proyecto **no requiere variables de entorno** (`.env`), ya que consume directamente el endpoint público de CoinGecko (`/api/v3/simple/price`) sin clave de API privada.
+
+---
+
+## Instalación y comandos disponibles
+
+1. **Instalar dependencias:**
    ```bash
    npm install
